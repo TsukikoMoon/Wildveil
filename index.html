@@ -8,6 +8,54 @@
 
 </head>
 <body>
+    <script type="module">
+    // Import Firebase
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+
+    // Your Firebase Config (PASTE YOUR CONFIG HERE)
+    const firebaseConfig = {
+        apiKey: "AIzaSyAoVMVvZ4Jk1vterX6fsyzdZHNpE1v06r0",
+  authDomain: "wildveil.firebaseapp.com",
+  projectId: "wildveil",
+  storageBucket: "wildveil.firebasestorage.app",
+  messagingSenderId: "67231268622",
+  appId: "1:67231268622:web:8950a8663334cec74aa15f",
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Sign Up Function
+    document.getElementById("signup-btn").addEventListener("click", () => {
+        const email = document.getElementById("signup-email").value;
+        const password = document.getElementById("signup-password").value;
+
+        createUserWithEmailAndPassword(auth, email, password)
+            .then(userCredential => {
+                alert("Account Created!");
+            })
+            .catch(error => {
+                alert(error.message);
+            });
+    });
+
+    // Log In Function
+    document.getElementById("login-btn").addEventListener("click", () => {
+        const email = document.getElementById("login-email").value;
+        const password = document.getElementById("login-password").value;
+
+        signInWithEmailAndPassword(auth, email, password)
+            .then(userCredential => {
+                alert("Logged In!");
+            })
+            .catch(error => {
+                alert(error.message);
+            });
+    });
+</script>
+
     <section class="main-container">
         <h1>Welcome to Wildveil</h1>
         <p>Explore. Breed. Thrive in a world of elemental foxes.</p>
