@@ -1,3 +1,4 @@
+<!-- Updated index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wildveil</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-
 </head>
 <body>
     <section class="main-container">
         <h1>Welcome to Wildveil</h1>
         <p>Explore. Breed. Thrive in a world of elemental foxes.</p>
-        <a href="#" class="button">Sign Up</a>
-        <a href="#" class="button">Log In</a>
+        <a href="signup.html" class="button">Sign Up</a>
+        <a href="login.html" class="button">Log In</a>
     </section>
 
     <section class="info">
@@ -30,58 +30,75 @@
     <footer>
         <p>&copy; 2025 Wildveil. All rights reserved.</p>
     </footer>
-
-    <script src="js/script.js"></script>
-        <script type="module">
-    // Import Firebase
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
-
-    // Your Firebase Config (PASTE YOUR CONFIG HERE)
-    const firebaseConfig = {
-        apiKey: "AIzaSyAoVMVvZ4Jk1vterX6fsyzdZHNpE1v06r0",
-  authDomain: "wildveil.firebaseapp.com",
-  projectId: "wildveil",
-  storageBucket: "wildveil.firebasestorage.app",
-  messagingSenderId: "67231268622",
-  appId: "1:67231268622:web:8950a8663334cec74aa15f",
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-    // Sign Up Function
-    document.getElementById("signup-btn").addEventListener("click", () => {
-        const email = document.getElementById("signup-email").value;
-        const password = document.getElementById("signup-password").value;
-
-        createUserWithEmailAndPassword(auth, email, password)
-            .then(userCredential => {
-                alert("Account Created!");
-            })
-            .catch(error => {
-                alert(error.message);
-            });
-    });
-
-    // Log In Function
-    document.getElementById("login-btn").addEventListener("click", () => {
-        const email = document.getElementById("login-email").value;
-        const password = document.getElementById("login-password").value;
-
-        signInWithEmailAndPassword(auth, email, password)
-            .then(userCredential => {
-                alert("Logged In!");
-            })
-            .catch(error => {
-                alert(error.message);
-            });
-    });
-</script>
 </body>
 </html>
 
-   
+<!-- signup.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Wildveil</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <h2>Sign Up</h2>
+    <input type="email" id="signup-email" placeholder="Email">
+    <input type="password" id="signup-password" placeholder="Password">
+    <button id="signup-btn">Sign Up</button>
+    <p>Already have an account? <a href="login.html">Log In</a></p>
+    <script src="js/firebase-auth.js"></script>
 </body>
 </html>
+
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In - Wildveil</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <h2>Log In</h2>
+    <input type="email" id="login-email" placeholder="Email">
+    <input type="password" id="login-password" placeholder="Password">
+    <button id="login-btn">Log In</button>
+    <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+    <script src="js/firebase-auth.js"></script>
+</body>
+</html>
+
+<!-- firebase-auth.js -->
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyAoVMVvZ4Jk1vterX6fsyzdZHNpE1v06r0",
+    authDomain: "wildveil.firebaseapp.com",
+    projectId: "wildveil",
+    storageBucket: "wildveil.firebasestorage.app",
+    messagingSenderId: "67231268622",
+    appId: "1:67231268622:web:8950a8663334cec74aa15f"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+document.getElementById("signup-btn")?.addEventListener("click", () => {
+    const email = document.getElementById("signup-email").value;
+    const password = document.getElementById("signup-password").value;
+    createUserWithEmailAndPassword(auth, email, password)
+        .then(() => alert("Account Created!"))
+        .catch(error => alert(error.message));
+});
+
+document.getElementById("login-btn")?.addEventListener("click", () => {
+    const email = document.getElementById("login-email").value;
+    const password = document.getElementById("login-password").value;
+    signInWithEmailAndPassword(auth, email, password)
+        .then(() => alert("Logged In!"))
+        .catch(error => alert(error.message));
+});
