@@ -1,6 +1,8 @@
 // Firebase Imports (Must be at the top)
+// Firebase Imports (Correct URLs)
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+
 
 // Firebase Config
 const firebaseConfig = {
