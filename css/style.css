@@ -1,64 +1,79 @@
-/* Reset default margin & padding */
-* {
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-/* Background & Text */
-body {
-    background-color: #FAF3E0; /* Light tan */
-    font-family: 'Poppins', sans-serif;
-    color: #333;
+    background-color: #f4e8d5; /* Light tan background */
+    color: #3e2f20;
     text-align: center;
-    padding-top: 100px;
 }
 
 /* Header */
 header {
-    background-color: #4A7C59; /* Forest green */
+    background-color: #2a4d34; /* Deep forest green */
     color: white;
-    padding: 30px 0;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-/* Navigation Bar */
-nav {
-    background-color: #2C5E3D; /* Darker green */
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-nav ul {
-    list-style-type: none;
+    padding: 15px;
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav ul li {
-    display: inline;
+header h1 {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding-left: 20px;
 }
 
-nav ul li a {
+nav a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
-    padding: 10px 20px;
+    margin: 0 15px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    padding: 60px 20px;
+    background-color: #bfa27d; /* Soft earthy brown */
     border-radius: 10px;
-    transition: 0.3s ease-in-out;
+    margin: 40px auto;
+    width: 80%;
+    max-width: 600px;
 }
 
-nav ul li a:hover {
-    background-color: #76A26F; /* Lighter green */
+.hero h2 {
+    font-size: 2rem;
 }
 
-/* Main Content */
-main {
-    padding: 40px;
-    max-width: 800px;
-    margin: auto;
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.button {
+    background-color: #2a4d34;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background-color: #3c6a4b;
+}
+
+/* Footer */
+footer {
+    background-color: #2a4d34;
+    color: white;
+    padding: 10px;
+    margin-top: 40px;
+}
