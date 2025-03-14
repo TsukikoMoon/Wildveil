@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const signupButton = document.querySelector(".button.w-button");
-    const loginButton = document.querySelector(".button-2.w-button");
+    const signupButton = document.querySelector(".button");
+    const loginButton = document.querySelector(".button:last-of-type"); // Selects the second button
 
     if (signupButton) {
         signupButton.addEventListener("click", function () {
