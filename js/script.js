@@ -1,20 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const signupButton = document.querySelector(".button");
-    const loginButton = document.querySelector(".button:last-of-type"); // Selects the second button
-
-    if (signupButton) {
-        signupButton.addEventListener("click", function () {
-            window.location.href = "signup.html";
-        });
-    }
-
-    if (loginButton) {
-        loginButton.addEventListener("click", function () {
-            window.location.href = "login.html";
-        });
-    }
-});
-// Firebase Imports
+// Firebase Imports (Must be at the top)
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 
@@ -32,8 +16,24 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Signup Logic
 document.addEventListener("DOMContentLoaded", function () {
+    // Button Navigation
+    const signupButton = document.querySelector(".button");  // First button
+    const loginButton = document.querySelector(".button-2"); // Second button
+
+    if (signupButton) {
+        signupButton.addEventListener("click", function () {
+            window.location.href = "signup.html";
+        });
+    }
+
+    if (loginButton) {
+        loginButton.addEventListener("click", function () {
+            window.location.href = "login.html";
+        });
+    }
+
+    // Signup Logic
     const signupForm = document.getElementById("signup-form");
     if (signupForm) {
         signupForm.addEventListener("submit", function (e) {
@@ -71,3 +71,4 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
