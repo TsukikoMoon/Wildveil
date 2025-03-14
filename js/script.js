@@ -1,11 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Redirect to Sign Up Page
-    document.getElementById("signup-btn").addEventListener("click", function () {
-        window.location.href = "signup.html"; // Change this to your actual sign-up page
-    });
+    // Target the Webflow buttons using their class names
+    const signupButton = document.querySelector(".button.w-button");
+    const loginButton = document.querySelector(".button-2.w-button");
 
-    // Redirect to Log In Page
-    document.getElementById("login-btn").addEventListener("click", function () {
-        window.location.href = "login.html"; // Change this to your actual login page
-    });
+    if (signupButton) {
+        signupButton.addEventListener("click", function () {
+            window.location.href = "signup.html"; // Change this to your actual sign-up page
+        });
+    }
+
+    if (loginButton) {
+        loginButton.addEventListener("click", function () {
+            window.location.href = "login.html"; // Change this to your actual login page
+        });
+    }
 });
