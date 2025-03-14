@@ -1,19 +1,97 @@
+/* General Styles */
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Full screen height */
-  margin: 0;
-  background-color: #f5f0e1; /* Adjust if needed */
+    font-family: 'Great Vibes', cursive;
+    background-color: #f5e3cb; /* Tan background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
 }
 
-.container {
-  text-align: center;
-  width: 90%;
-  max-width: 500px; /* Adjust for better spacing */
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+/* Header Section */
+.section {
+    background-color: #2e5339; /* Forest green */
+    width: 100%;
+    padding: 20px 0;
+    color: white;
 }
 
+.container-3 {
+    max-width: 800px;
+    margin: auto;
+}
+
+.heading {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.paragraph {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.button, .button-2 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #5a8c66; /* Soft green */
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.button:hover, .button-2:hover {
+    background-color: #4e7a5a;
+}
+
+/* What is Wildveil Section */
+.section-3 {
+    background-color: #f5e3cb;
+    padding: 40px 20px;
+}
+
+.heading-2 {
+    font-size: 2em;
+    color: #2e5339;
+}
+
+.text-block {
+    max-width: 900px;
+    margin: auto;
+    font-size: 1.2em;
+    color: #2e5339;
+}
+
+/* Features Section */
+.section-2 {
+    background-color: #2e5339;
+    color: white;
+    padding: 30px 0;
+}
+
+.grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.text-block-2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Footer */
+.text-block-3 {
+    background-color: #2e5339;
+    color: white;
+    padding: 10px 0;
+    width: 100%;
+}
