@@ -77,3 +77,21 @@ footer {
     padding: 10px;
     margin-top: 40px;
 }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the screen */
+  margin: 0;
+  background-color: #f5f0e1; /* Or whatever background you want */
+}
+
+.container {
+  text-align: center;
+  width: 80%;
+  max-width: 600px; /* Adjust as needed */
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
